@@ -1,66 +1,80 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# DealPrime — E-commerce Platform (Laravel)
+DealPrime is a full-stack e-commerce web application built with **Laravel 10** for product discovery, cart/checkout, customer accounts, and a role-based admin panel. The project includes Bangladesh-specific integrations like **SSLCommerz payment gateway**, **Pathao courier API**, and **SMS OTP** via **sms.net.bd**.
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+> Built during BITM Web Development training using Laravel.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Key Features
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+### Storefront (Customer-facing)
+- Product browsing by category + product details pages  
+- Cart, wishlist, and compare list
+- Coupon/discount apply flow
+- Customer authentication flows (includes phone OTP support)
+- Checkout flow with **SSLCommerz** online payment
+- Order tracking page (search + status view)
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### Admin Panel (Operations)
+- Admin dashboard (Jetstream + Sanctum auth)
+- **Role-based access control (RBAC)** using `spatie/laravel-permission`
+- Catalog management:
+  - Categories / subcategories / tags
+  - Brands, colors, sizes, units
+  - Products + stock management
+  - Combo products / offers
+- Order management + status updates
+- Delivery settings:
+  - Courier, districts, police stations
+  - Delivery charges
+- CMS modules:
+  - Banners, carousel, popup
+  - Blog + blog categories/tags
+  - FAQs, about, policies/terms, contact messages
+- Reports section (admin reporting pages)
 
-## Learning Laravel
+### Integrations
+- **SSLCommerz Payment** (Hosted checkout + success/fail/cancel + IPN validation)
+- **Pathao Courier API**
+  - city/zone/area lookup
+  - create courier order from admin
+- **SMS.net.bd**
+  - OTP SMS sending
+  - order/payment SMS notifications
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## Tech Stack
+- **Backend:** Laravel 10 (PHP 8.1+), Jetstream, Sanctum  
+- **Frontend:** Blade + TailwindCSS + Vite  
+- **DB:** MySQL  
+- **Auth/RBAC:** Jetstream auth + `spatie/laravel-permission`  
+- **Payments:** SSLCommerz  
+- **Courier:** Pathao API  
+- **SMS:** sms.net.bd API  
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Screenshots 
+![Storefront](docs/screenshots/home.png)
+![Store Products](docs/screenshots/product.png)
+![Admin Panel](docs/screenshots/admin-dashboard.png)
+![Admin Order](docs/screenshots/orders.png)
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+---
 
-### Premium Partners
+## Getting Started (Local Setup)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 1) Requirements
+- PHP **8.1+**
+- Composer
+- Node.js **18+** (recommended)
+- MySQL
 
-## Contributing
+### 2) Clone & Install
+```bash
+git clone <YOUR_REPO_URL>
+cd dealprime
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+composer install
+npm install
