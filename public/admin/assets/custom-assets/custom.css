@@ -1,0 +1,80 @@
+/* Image preview css  */
+#imagePreview {
+    margin-top: 5px;
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+    border: 1px solid black;
+    display: none; /* Hide it initially */
+    position: absolute;
+    top: 2px ;
+
+}
+@media (max-width: 575.98px) {
+    #imagePreview {
+        width: 60px;
+        left: 65vw;
+        top: 25px;
+    }
+}
+@media (min-width: 576px) and (max-width: 767.98px) {
+    #imagePreview {
+        top: 16px;
+        right: 13px;
+        max-width: 56px;
+    }
+}
+@media (min-width: 768px) {
+    #imagePreview {
+        max-width: 90px;
+        height: 100px;
+    }
+}
+@media (min-width: 320px) {
+    #imagePreview {
+        max-width: 90px;
+        top: 2px;
+    }
+}
+
+/* Image preview css  end */
+/* -------------------------------------------------------------------------------------------- */
+/* Dropdown and search field for product code*/
+.searchable-dropdown {
+    position: relative;
+}
+.dropdown-menu {
+    width: 100%;
+    max-height: 200px;
+    overflow-y: auto;
+}
+.dropdown-menu .dropdown-item {
+    cursor: pointer;
+}
+.dropdown-menu .dropdown-item:hover {
+    background-color: #f1f1f1;
+}
+
+/* Dropdown and search field for product code End */
+
+/* custom select2 multiple dropdown css code  */
+   .select2-container .select2-selection--multiple .select2-selection__choice {
+    color: #171616;
+}
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+
+#datatable-buttons {
+    border: 1px solid #bdd4be; /* Change to your desired color */
+}
+#datatable-buttons th, #datatable-buttons td {
+    border: 1px solid #c5d2c5; /* Change to your desired color */
+}
+
+.table th:nth-child(1), .table td:nth-child(1) {
+    width: 5px;
+    /* font-size: 10px; */
+}
+/* ---------------------------------------------------------------------------- */
+

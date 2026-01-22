@@ -1,0 +1,58 @@
+php_value upload_max_filesize 128M
+php_value post_max_size 128M
+php_value max_execution_time 300
+php_value max_input_vars 3000
+php_value mamory_limit 256M
+
+<IfModule Litespeed>
+SetEnv noabort 1
+SetEnv noconntimeout 1
+</IfModule><IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
+    RewriteEngine On
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_URI} (.+)/$
+    RewriteRule ^ %1 [L,R=301]
+
+    # Send Requests To Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+
+# php -- BEGIN cPanel-generated handler, do not edit
+# This domain inherits the “PHP” package.
+# php -- END cPanel-generated handler, do not edit
+php_value upload_max_filesize 1028M
+php_value post_max_size 1028M
+php_value max_execution_time 3000
+php_value max_input_vars 3000
+php_value mamory_limit 2056M
+php_value max_file_uploads 100
+
+<IfModule Litespeed>
+SetEnv noabort 1
+SetEnv noconntimeout 1
+</IfModule>
+
+# BEGIN cPanel-generated php ini directives, do not edit
+# Manual editing of this file may result in unexpected behavior.
+# To make changes to this file, use the cPanel MultiPHP INI Editor (Home >> Software >> MultiPHP INI Editor)
+# For more information, read our documentation (https://go.cpanel.net/EA4ModifyINI)
+<IfModule php8_module>
+   php_value upload_max_filesize 10M
+</IfModule>
+<IfModule lsapi_module>
+   php_value upload_max_filesize 10M
+</IfModule>
+# END cPanel-generated php ini directives, do not edit

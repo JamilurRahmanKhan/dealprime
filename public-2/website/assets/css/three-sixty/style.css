@@ -1,0 +1,24 @@
+@charset "utf-8";
+body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+ul, li {
+    list-style: none;
+}
+.rotate-list-div {
+    width: 400px;
+    height: 255px;
+    border: 1px solid #ccc;
+    margin: 0px auto 0;
+    overflow: hidden;
+}
+.rotate-list-div ul {
+    width: 400px;
+    height: 255px;
+}
+.rotate-list-div ul li img {
+    display: block;
+    width: 400px;
+    height: 255px;
+}
